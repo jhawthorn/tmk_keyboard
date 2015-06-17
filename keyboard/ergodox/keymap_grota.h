@@ -33,13 +33,13 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------+-----+-----+-----+------+-----|  [{  |           |  ]}  |-------+-------+------+-----+------+--------|
      * |'"/LShift|  Z  |  T  |  M  |  B   |  V  |      |           |      |  /?   |   N   |   P  | .>  |   U  | RShift |
      * `---------+-----+-----+-----+------+------------'           `--------------+-------+------+-----+------+--------'
-     *  | LCtrl  | `~  | ~L1 | LAlt| Bksp |                                       | Space | Del  |  9  |   0  |   =+  |
+     *  | LCtrl  |RAlt | ~L1 | LAlt| Bksp |                                       | Space | Del  |  9  |   0  |   =+  |
      *  `---------------------------------'                                       `-----------------------------------'
      *                                        ,-------------.       ,-------------.
      *                                        |  F2  | LGui |       |  L1  |  F1  |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      | C-x  |       |  F3  |      |      |
-     *                                 | C-c  |S-Ins |------|       |------| RAlt |Enter |
+     *                                 | C-c  |S-Ins |------|       |------|  `~  |Enter |
      *                                 |      |      | C-v  |       | KP0  |      |RCtrl |
      *                                 `--------------------'       `--------------------'
      *
@@ -60,7 +60,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      |      |       |  L0  |      |      |
      *                                 |      |      |------|       |------|      |      |
-     *                                 |      |      |      |       |      |      |      |
+     *                                 |      |      |      |       | Prev | Next | Play |
      *                                 `--------------------'       `--------------------'
      */
 
@@ -69,7 +69,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TAB,    Q,     F,     W,      R,   Y,  HOME,
        MINS,    A,     S,     D,      G,   X,
         FN5,    Z,     T,     M,      B,   V,  LBRC,
-      LCTRL,  GRV,   FN2,  LALT,   BSPC,
+      LCTRL, RALT,   FN2,  LALT,   BSPC,
 
                                          F2, LGUI,
                                              FN11,
@@ -84,7 +84,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         FN12,   F1,
           F3,
-          P0, RALT, FN6
+          P0,  GRV, FN6
     ),
 
     KEYMAP(  // Layer1, left hand
@@ -104,7 +104,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            P0, TRNS,   P4,   P2,   P6,
         FN4,TRNS,
         FN0,
-        TRNS,TRNS,TRNS
+        MEDIA_PREV_TRACK,MEDIA_NEXT_TRACK,MEDIA_PLAY_PAUSE
     ),
 
     KEYMAP(  // Layer2: steno for plover
