@@ -42,7 +42,7 @@
 TARGET = ergodox_lufa
 
 # Directory common source filess exist
-TOP_DIR = ../..
+TOP_DIR = ../../tmk_core
 
 # Directory keyboard dependent files exist
 TARGET_DIR = .
@@ -117,6 +117,8 @@ INVERT_NUMLOCK = yes 	# invert state of NumLock led
 # Search Path
 VPATH += $(TARGET_DIR)
 VPATH += $(TOP_DIR)
+# TMK_DIR should IMHO actually take the place of TOP_DIR
+TMK_DIR = ../../tmk_core
 
 include $(TOP_DIR)/protocol.mk
 include $(TOP_DIR)/protocol/lufa.mk
