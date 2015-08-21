@@ -70,11 +70,10 @@ You can find some keyboard specific projects under `converter` and `keyboard` di
 * [KittenPaw](keyboard/kitten_paw)          - Custom Majestouch controller
 * [Lightpad](keyboard/lightpad)             - Korean custom keypad
 * [ghost_squid](keyboard/ghost_squid/)      - [The Ghost Squid][ghost_squid] controller for [Cooler Master QuickFire XT][cmxt]
+* [ErgoDox](keyboard/ergodox/)              - [Ergonomic keyboard][ergodox_org] [with split design][GH_ergodox] (see [Ergodox-FAQ.md](keyboard/ergodox/Ergodox-FAQ.md))
 
 ### Extenal projects using tmk_keyboard
-* [ErgoDox_cub-uanic][cub-uanic]            - Split Ergonomic Keyboard [ErgoDox][ergodox_org]
 * [mcdox][mcdox_tmk]                        - [mcdox][mcdox]
-
 
 [GH_macway]:    http://geekhack.org/showwiki.php?title=Island:11930
 [GH_hhkb]:      http://geekhack.org/showwiki.php?title=Island:12047
