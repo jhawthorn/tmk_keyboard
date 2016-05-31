@@ -67,33 +67,57 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
    }
 
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    KEYMAP(  // layer 0 : default
-        // left hand
-        EQL, 1,   2,   3,   4,   5,   ESC,
-        BSLS,Q,   W,   E,   R,   T,   FN2,
-        TAB, A,   S,   D,   F,   G,
-        LSFT,Z,   X,   C,   V,   B,   FN1,
-        LGUI,GRV, BSLS,LEFT,RGHT,
-                                      LCTL,LALT,
-                                           HOME,
-                                 BSPC,DEL, END,
+   /* layer 0 : default */
+   KEYMAP(
+       // left hand
+      GRAVE,1,   2,   3,   4,   5,   NO,
+       ESC ,Q,   W,   E,   R,   T,   FN0,
+       RCTL,A,   S,   D,   F,   G,
+       LSFT,Z,   X,   C,   V,   B,   LGUI,
+       LALT,NO , NO  ,NO  ,NO  ,
+                                     DEL ,INS ,
+                                          END ,
+                                SPC ,BSPC,HOME,
 
-        // right hand
-             FN3, 6,   7,   8,   9,   0,   MINS,
-             LBRC,Y,   U,   I,   O,   P,   RBRC,
-                  H,   J,   K,   L,   SCLN,QUOT,
-             FN1, N,   M,   COMM,DOT, SLSH,RSFT,
-                       LEFT,DOWN,UP,  RGHT,RGUI,
-        RALT,RCTL,
-        PGUP,
-        PGDN,ENT, SPC
-    )
+       // right hand
+            NO,  6,   7,   8,   9,   0,   NO  ,
+            FN0, Y,   U,   I,   O,   P,   BSLS,
+                 H,   J,   K,   L,   SCLN,QUOT,
+            RGUI,N,   M,   COMM,DOT, SLSH,RSFT,
+                      MINS,EQL ,LBRC,RBRC,RALT,
+       NO  ,NO  ,
+       PGUP,
+       PGDN,TAB, ENT
+   ),
+
+   /* layer 1 : function and symbol keys */
+   KEYMAP(
+       // left hand
+       TRNS,F1,  F2,  F3,  F4,  F5,   F6,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,FN4,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,
+                                     TRNS,TRNS,
+                                          TRNS,
+                                TRNS,TRNS,TRNS,
+       // right hand
+              F7,  F8,  F9,  F8, F10, F11, F12,
+            TRNS,TRNS,  P7,  P8,  P9,PAST,TRNS,
+                 TRNS,  P4,  P5,  P6,PPLS,TRNS,
+            TRNS,TRNS,  P1,  P2,  P3,PSLS,TRNS,
+                      TRNS,PDOT,  P0,TRNS,TRNS,
+       TRNS,TRNS,
+       TRNS,
+       TRNS,TRNS,TRNS
+   ),
 };
 
 /*
  * Fn action definition
  */
 static const uint16_t PROGMEM fn_actions[] = {
+   ACTION_LAYER_MOMENTARY(1),  // FN0 - switch to Layer1
 };
 
 
