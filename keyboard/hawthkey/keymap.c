@@ -93,17 +93,17 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
           TRNS  ,  F1  ,  F2  ,  F3  ,  F4  ,  F5  ,  F6  ,              F7  ,  F8  ,  F9  ,  F8  ,  F10 ,  F11 ,  F12   ,
     /* |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------| */
-    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
-          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS ,  P7  ,  P8  ,  P9  , PAST ,   TRNS ,
+    /* |        |      |      |  [   |  ]   |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , LBRC , RBRC , TRNS , TRNS ,             TRNS , TRNS ,  P7  ,  P8  ,  P9  , PAST ,   TRNS ,
     /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
-    /* |        |      |      |      |      |      |------|           |------|      |      |      |      |      |        | */
-          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS ,                           TRNS ,  P4  ,  P5  ,  P6  , PPLS ,   TRNS ,
+    /* |        |      |      |  (   |  )   |      |------|           |------|      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS ,  FN8 ,  FN9 , TRNS ,                           TRNS ,  P4  ,  P5  ,  P6  , PPLS ,   TRNS ,
     /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
-    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
-          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS ,  P1  ,  P2  ,  P3  , PSLS ,   TRNS ,
+    /* |        |      |      |  {   |  }   |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , FN10 , FN11 , TRNS , TRNS ,             TRNS , TRNS ,  P1  ,  P2  ,  P3  , PSLS ,   TRNS ,
     /* `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------' */
-    /*   |      |      |      |      |      |                                       |      |      |      |      |      |   */
-          TRNS  , TRNS , TRNS , TRNS , TRNS ,                                         TRNS , PDOT ,  P0  , TRNS ,   TRNS ,
+    /*   |      |      |      |  <   |  >   |                                       |      |      |      |      |      |   */
+          TRNS  , TRNS , TRNS , FN12 , FN13 ,                                         TRNS , PDOT ,  P0  , TRNS ,   TRNS ,
     /*   `----------------------------------'                                       `----------------------------------'   */
     /*                                        ,-------------.       ,-------------.                                        */
     /*                                        |      |      |       |      |      |                                        */
@@ -183,8 +183,15 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Fn action definition
  */
 static const uint16_t PROGMEM fn_actions[] = {
-   ACTION_LAYER_MOMENTARY(1),  // FN0 - switch to Layer1
-   ACTION_LAYER_MOMENTARY(2),  // FN1 - switch to Layer2
+   [0] = ACTION_LAYER_MOMENTARY(1),  // FN0 - switch to Layer1
+   [1] = ACTION_LAYER_MOMENTARY(2),  // FN1 - switch to Layer2
+
+   [8]  = ACTION_MODS_KEY(MOD_LSFT, KC_9),
+   [9]  = ACTION_MODS_KEY(MOD_LSFT, KC_0),
+   [10] = ACTION_MODS_KEY(MOD_LSFT, KC_LBRC),
+   [11] = ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),
+   [12] = ACTION_MODS_KEY(MOD_LSFT, KC_COMMA),
+   [13] = ACTION_MODS_KEY(MOD_LSFT, KC_DOT),
 };
 
 
