@@ -59,62 +59,128 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    /* layer 0 : default */
    KEYMAP(
-       ESC ,1,   2,   3,   4,   5,   NO,                    NO,  6,   7,   8,   9,   0,   NO  ,
-       TAB ,Q,   W,   E,   R,   T,   FN0,                   FN0, Y,   U,   I,   O,   P,   BSLS,
-       LCTL,A,   S,   D,   F,   G,                               H,   J,   K,   L,   SCLN,QUOT,
-       LSFT,Z,   X,   C,   V,   B,   LGUI,                  RGUI,N,   M,   COMM,DOT, SLSH,RSFT,
-        GRV,LALT, NO  ,NO  ,FN1  ,                                    MINS,EQL ,LBRC,RBRC,RALT,
-                                     DEL ,INS ,        NO  ,NO  ,
-                                          END ,        PGUP,
-                                SPC ,BSPC,HOME,        PGDN,TAB, ENT
+    /* ,--------------------------------------------------.           ,--------------------------------------------------. */
+    /* |        |  1 ! |  2 @ |  3 # |  4 $ |  5 % |      |           |      |  6 ^ |  7 & |  8 * |  9 ( |  0 ) |        | */
+          ESC   ,   1  ,   2  ,   3  ,   4  ,   5  ,   NO ,              NO  ,   6  ,   7  ,   8  ,   9  ,   0  ,    NO  ,
+    /* |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------| */
+    /* |        |  q Q |  w W |  e E |  r R |  t T |      |           |      |  y Y |  u U |  i I |  o O |  p P |        | */
+          TAB   ,   Q  ,   W  ,   E  ,   R  ,   T  ,  FN0 ,              FN0 ,   Y  ,   U  ,   I  ,   O  ,   P  ,   BSLS ,
+    /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
+    /* |        |  a A |  s S |  d D |  f F |  g G |------|           |------|  h H |  j J |  k K |  l L |  ; : |   ' "  | */
+         LCTL   ,   A  ,   S  ,   D  ,   F  ,   G  ,                             H  ,   J  ,   K  ,   L  , SCLN ,   QUOT ,
+    /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
+    /* |        | z Z  |  x X |  c C |  v V |  b B |      |           |      |  n N |  m M |  , < |  . > |  / ? |        | */
+          LSFT  ,   Z  ,   X  ,   C  ,   V  ,   B  , LGUI ,             RGUI ,   N  ,   M  , COMM , DOT  , SLSH ,  RSFT  ,
+    /* `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------' */
+    /*   |      |      |      |      |      |                                       |  - _ |  = + |  [ { |  ] } |      |   */
+           GRV  , LALT ,  NO  ,  NO  , FN1  ,                                         MINS ,  EQL , LBRC , RBRC , RALT ,
+    /*   `----------------------------------'                                       `----------------------------------'   */
+    /*                                        ,-------------.       ,-------------.                                        */
+    /*                                        |      |      |       |      |      |                                        */
+                                                DEL  , INS  ,          NO  ,  NO  ,
+
+    /*                                 ,------|------|------|       |------+------+------.                                 */
+    /*                                 |      |      |      |       |      |      |      |                                 */
+                                                        END ,         PGUP ,
+    /*                                 |      |      |------|       |------|      |      |                                 */
+    /*                                 |      |      |      |       |      |      |      |                                 */
+                                         SPC  , BSPC , HOME ,         PGDN , TAB  , ENT
+    /*                                 `--------------------'       `--------------------'                                 */
    ),
 
    /* layer 1 : function and symbol keys */
    KEYMAP(
-       TRNS,F1,  F2,  F3,  F4,  F5,   F6,                     F7,  F8,  F9,  F8, F10, F11, F12,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,  P7,  P8,  P9,PAST,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                            TRNS,  P4,  P5,  P6,PPLS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,  P1,  P2,  P3,PSLS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,                                      TRNS,PDOT,  P0,TRNS,TRNS,
-                                     TRNS,TRNS,        TRNS,TRNS,
-                                          TRNS,        TRNS,
-                                TRNS,TRNS,TRNS,        TRNS,TRNS,TRNS
+    /* ,--------------------------------------------------.           ,--------------------------------------------------. */
+    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  ,  F1  ,  F2  ,  F3  ,  F4  ,  F5  ,  F6  ,              F7  ,  F8  ,  F9  ,  F8  ,  F10 ,  F11 ,  F12   ,
+    /* |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------| */
+    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS ,  P7  ,  P8  ,  P9  , PAST ,   TRNS ,
+    /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
+    /* |        |      |      |      |      |      |------|           |------|      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS ,                           TRNS ,  P4  ,  P5  ,  P6  , PPLS ,   TRNS ,
+    /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
+    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS ,  P1  ,  P2  ,  P3  , PSLS ,   TRNS ,
+    /* `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------' */
+    /*   |      |      |      |      |      |                                       |      |      |      |      |      |   */
+          TRNS  , TRNS , TRNS , TRNS , TRNS ,                                         TRNS , PDOT ,  P0  , TRNS ,   TRNS ,
+    /*   `----------------------------------'                                       `----------------------------------'   */
+    /*                                        ,-------------.       ,-------------.                                        */
+    /*                                        |      |      |       |      |      |                                        */
+                                                TRNS , TRNS ,         TRNS , TRNS ,
+
+    /*                                 ,------|------|------|       |------+------+------.                                 */
+    /*                                 |      |      |      |       |      |      |      |                                 */
+                                                       TRNS ,         TRNS ,
+    /*                                 |      |      |------|       |------|      |      |                                 */
+    /*                                 |      |      |      |       |      |      |      |                                 */
+                                         TRNS , TRNS , TRNS ,         TRNS , TRNS , TRNS
+    /*                                 `--------------------'       `--------------------'                                 */
+    /**/
    ),
 
-   /* layer 2 : function and symbol keys */
+   /* layer 3 : arrows */
    KEYMAP(
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,  UP,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,                            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,                                      TRNS,TRNS,TRNS,TRNS,TRNS,
-                                     TRNS,TRNS,        TRNS,TRNS,
-                                          TRNS,        TRNS,
-                                TRNS,TRNS,TRNS,        TRNS,TRNS,TRNS
-   ),
+    /* ,--------------------------------------------------.           ,--------------------------------------------------. */
+    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /* |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------| */
+    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS ,  UP  , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
+    /* |        |      |      |      |      |      |------|           |------|      |      |      |      |      |        | */
+          TRNS  , LEFT , DOWN , RGHT , TRNS , TRNS ,                           TRNS , TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
+    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /* `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------' */
+    /*   |      |      |      |      |      |                                       |      |      |      |      |      |   */
+          TRNS  , TRNS , TRNS , TRNS , TRNS ,                                         TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /*   `----------------------------------'                                       `----------------------------------'   */
+    /*                                        ,-------------.       ,-------------.                                        */
+    /*                                        |      |      |       |      |      |                                        */
+                                                TRNS , TRNS ,         TRNS , TRNS ,
 
-   /* Example:
-   KEYMAP(
-       // left hand
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,
-                                     TRNS,TRNS,
-                                          TRNS,
-                                TRNS,TRNS,TRNS,
-       // right hand
-            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                 TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                      TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,
-       TRNS,
-       TRNS,TRNS,TRNS
+    /*                                 ,------|------|------|       |------+------+------.                                 */
+    /*                                 |      |      |      |       |      |      |      |                                 */
+                                                       TRNS ,         TRNS ,
+    /*                                 |      |      |------|       |------|      |      |                                 */
+    /*                                 |      |      |      |       |      |      |      |                                 */
+                                         TRNS , TRNS , TRNS ,         TRNS , TRNS , TRNS
+    /*                                 `--------------------'       `--------------------'                                 */
    ),
-   */
+#if 0
+   KEYMAP(
+    /* ,--------------------------------------------------.           ,--------------------------------------------------. */
+    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /* |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------| */
+    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
+    /* |        |      |      |      |      |      |------|           |------|      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS ,                           TRNS , TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
+    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          TRNS  , TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,             TRNS , TRNS , TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /* `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------' */
+    /*   |      |      |      |      |      |                                       |      |      |      |      |      |   */
+          TRNS  , TRNS , TRNS , TRNS , TRNS ,                                         TRNS , TRNS , TRNS , TRNS ,   TRNS ,
+    /*   `----------------------------------'                                       `----------------------------------'   */
+    /*                                        ,-------------.       ,-------------.                                        */
+    /*                                        |      |      |       |      |      |                                        */
+                                                TRNS , TRNS ,         TRNS , TRNS ,
+
+    /*                                 ,------|------|------|       |------+------+------.                                 */
+    /*                                 |      |      |      |       |      |      |      |                                 */
+                                                       TRNS ,         TRNS ,
+    /*                                 |      |      |------|       |------|      |      |                                 */
+    /*                                 |      |      |      |       |      |      |      |                                 */
+                                         TRNS , TRNS , TRNS ,         TRNS , TRNS , TRNS
+    /*                                 `--------------------'       `--------------------'                                 */
+   ),
+#endif
 };
 
 /*
