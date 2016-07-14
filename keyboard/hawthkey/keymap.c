@@ -29,28 +29,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define KEYMAP(                                                 \
                                                                 \
-    /* left hand, spatial positions */                          \
-    l50,l51,l52,l53,l54,l55,l56,                                \
-    l40,l41,l42,l43,l44,l45,l46,                                \
-    l30,l31,l32,l33,l34,l35,                                    \
-    l20,l21,l22,l23,l24,l25,l26,                                \
-    l10,l11,l12,l13,l14,                                        \
-                            l16,l06,                            \
-                                l04,                            \
-                        l03,l02,l01,                            \
-                                                                \
-    /* right hand, spatial positions */                         \
-        r56,r55,r54,r53,r52,r51,r50,                            \
-        r46,r45,r44,r43,r42,r41,r40,                            \
-            r35,r34,r33,r32,r31,r30,                            \
-        r26,r25,r24,r23,r22,r21,r20,                            \
-                r14,r13,r12,r11,r10,                            \
-    r06,r16,                                                    \
-    r04,                                                        \
-    r01,r02,r03 )                                               \
-                                                                \
-   /* matrix positions */                                       \
-   {                                                            \
+    l50,l51,l52,l53,l54,l55,l56,            r56,r55,r54,r53,r52,r51,r50,    \
+    l40,l41,l42,l43,l44,l45,l46,            r46,r45,r44,r43,r42,r41,r40,    \
+    l30,l31,l32,l33,l34,l35,                    r35,r34,r33,r32,r31,r30,    \
+    l20,l21,l22,l23,l24,l25,l26,            r26,r25,r24,r23,r22,r21,r20,    \
+    l10,l11,l12,l13,l14,                            r14,r13,r12,r11,r10,    \
+                            l16,l06,    r06,r16,                            \
+                                l04,    r04,                                \
+                        l03,l02,l01,    r01,r02,r03                         \
+) \
+   /* matrix positions */ \
+   { \
     {KC_##l50, KC_##l51, KC_##l52, KC_##l53, KC_##l54, KC_##l55, KC_##l56}, \
     {KC_##l40, KC_##l41, KC_##l42, KC_##l43, KC_##l44, KC_##l45, KC_##l46}, \
     {KC_##l30, KC_##l31, KC_##l32, KC_##l33, KC_##l34, KC_##l35, KC_NO}, \
@@ -70,69 +59,38 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    /* layer 0 : default */
    KEYMAP(
-       // left hand
-       ESC ,1,   2,   3,   4,   5,   NO,
-       TAB ,Q,   W,   E,   R,   T,   FN0,
-       LCTL,A,   S,   D,   F,   G,
-       LSFT,Z,   X,   C,   V,   B,   LGUI,
-        GRV,LALT, NO  ,NO  ,FN1  ,
-                                     DEL ,INS ,
-                                          END ,
-                                SPC ,BSPC,HOME,
-
-       // right hand
-            NO,  6,   7,   8,   9,   0,   NO  ,
-            FN0, Y,   U,   I,   O,   P,   BSLS,
-                 H,   J,   K,   L,   SCLN,QUOT,
-            RGUI,N,   M,   COMM,DOT, SLSH,RSFT,
-                      MINS,EQL ,LBRC,RBRC,RALT,
-       NO  ,NO  ,
-       PGUP,
-       PGDN,TAB, ENT
+       ESC ,1,   2,   3,   4,   5,   NO,                    NO,  6,   7,   8,   9,   0,   NO  ,
+       TAB ,Q,   W,   E,   R,   T,   FN0,                   FN0, Y,   U,   I,   O,   P,   BSLS,
+       LCTL,A,   S,   D,   F,   G,                               H,   J,   K,   L,   SCLN,QUOT,
+       LSFT,Z,   X,   C,   V,   B,   LGUI,                  RGUI,N,   M,   COMM,DOT, SLSH,RSFT,
+        GRV,LALT, NO  ,NO  ,FN1  ,                                    MINS,EQL ,LBRC,RBRC,RALT,
+                                     DEL ,INS ,        NO  ,NO  ,
+                                          END ,        PGUP,
+                                SPC ,BSPC,HOME,        PGDN,TAB, ENT
    ),
 
    /* layer 1 : function and symbol keys */
    KEYMAP(
-       // left hand
-       TRNS,F1,  F2,  F3,  F4,  F5,   F6,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,
-                                     TRNS,TRNS,
-                                          TRNS,
-                                TRNS,TRNS,TRNS,
-       // right hand
-              F7,  F8,  F9,  F8, F10, F11, F12,
-            TRNS,TRNS,  P7,  P8,  P9,PAST,TRNS,
-                 TRNS,  P4,  P5,  P6,PPLS,TRNS,
-            TRNS,TRNS,  P1,  P2,  P3,PSLS,TRNS,
-                      TRNS,PDOT,  P0,TRNS,TRNS,
-       TRNS,TRNS,
-       TRNS,
-       TRNS,TRNS,TRNS
+       TRNS,F1,  F2,  F3,  F4,  F5,   F6,                     F7,  F8,  F9,  F8, F10, F11, F12,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,  P7,  P8,  P9,PAST,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                            TRNS,  P4,  P5,  P6,PPLS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,  P1,  P2,  P3,PSLS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,                                      TRNS,PDOT,  P0,TRNS,TRNS,
+                                     TRNS,TRNS,        TRNS,TRNS,
+                                          TRNS,        TRNS,
+                                TRNS,TRNS,TRNS,        TRNS,TRNS,TRNS
    ),
 
    /* layer 2 : function and symbol keys */
    KEYMAP(
-       // left hand
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,  UP,TRNS,TRNS,TRNS,TRNS,
-       TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,TRNS,TRNS,TRNS,
-                                     TRNS,TRNS,
-                                          TRNS,
-                                TRNS,TRNS,TRNS,
-       // right hand
-            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                 TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                      TRNS,TRNS,TRNS,TRNS,TRNS,
-       TRNS,TRNS,
-       TRNS,
-       TRNS,TRNS,TRNS
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,  UP,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,                            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,                                      TRNS,TRNS,TRNS,TRNS,TRNS,
+                                     TRNS,TRNS,        TRNS,TRNS,
+                                          TRNS,        TRNS,
+                                TRNS,TRNS,TRNS,        TRNS,TRNS,TRNS
    ),
 
    /* Example:
