@@ -67,14 +67,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
    }
 
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
    /* layer 0 : default */
    KEYMAP(
        // left hand
-      GRAVE,1,   2,   3,   4,   5,   NO,
-       ESC ,Q,   W,   E,   R,   T,   FN0,
-       RCTL,A,   S,   D,   F,   G,
+       ESC ,1,   2,   3,   4,   5,   NO,
+       TAB ,Q,   W,   E,   R,   T,   FN0,
+       LCTL,A,   S,   D,   F,   G,
        LSFT,Z,   X,   C,   V,   B,   LGUI,
-       LALT,NO , NO  ,NO  ,NO  ,
+        GRV,LALT, NO  ,NO  ,FN1  ,
                                      DEL ,INS ,
                                           END ,
                                 SPC ,BSPC,HOME,
@@ -94,7 +95,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KEYMAP(
        // left hand
        TRNS,F1,  F2,  F3,  F4,  F5,   F6,
-       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,FN4,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
        TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -111,6 +112,51 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        TRNS,
        TRNS,TRNS,TRNS
    ),
+
+   /* layer 2 : function and symbol keys */
+   KEYMAP(
+       // left hand
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,  UP,TRNS,TRNS,TRNS,TRNS,
+       TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,
+                                     TRNS,TRNS,
+                                          TRNS,
+                                TRNS,TRNS,TRNS,
+       // right hand
+            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                 TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                      TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,
+       TRNS,
+       TRNS,TRNS,TRNS
+   ),
+
+   /* Example:
+   KEYMAP(
+       // left hand
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,TRNS,TRNS,TRNS,
+                                     TRNS,TRNS,
+                                          TRNS,
+                                TRNS,TRNS,TRNS,
+       // right hand
+            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                 TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                      TRNS,TRNS,TRNS,TRNS,TRNS,
+       TRNS,TRNS,
+       TRNS,
+       TRNS,TRNS,TRNS
+   ),
+   */
 };
 
 /*
@@ -118,6 +164,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 static const uint16_t PROGMEM fn_actions[] = {
    ACTION_LAYER_MOMENTARY(1),  // FN0 - switch to Layer1
+   ACTION_LAYER_MOMENTARY(2),  // FN1 - switch to Layer2
 };
 
 
