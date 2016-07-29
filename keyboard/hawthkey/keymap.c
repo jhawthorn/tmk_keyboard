@@ -72,8 +72,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* |        | z Z  |  x X |  c C |  v V |  b B |      |           |      |  n N |  m M |  , < |  . > |  / ? |        | */
           LSFT  ,   Z  ,   X  ,   C  ,   V  ,   B  , LGUI ,             RGUI ,   N  ,   M  , COMM , DOT  , SLSH ,  RSFT  ,
     /* `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------' */
-    /*   |      |      |      |      |      |                                       |  - _ |  = + |  [ { |  ] } |      |   */
-           GRV  , LALT ,  NO  ,  NO  , FN1  ,                                         MINS ,  EQL , LBRC , RBRC , RALT ,
+    /*   |      |      |      |      |      |                                       |  - _ |  = + |  [ { |  ] } | PASTE|   */
+           GRV  , LALT ,  NO  ,  NO  , FN1  ,                                         MINS ,  EQL , LBRC , RBRC , FN2  ,
     /*   `----------------------------------'                                       `----------------------------------'   */
     /*                                        ,-------------.       ,-------------.                                        */
     /*                                        |      |      |       |      |      |                                        */
@@ -185,6 +185,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 static const uint16_t PROGMEM fn_actions[] = {
    [0] = ACTION_LAYER_MOMENTARY(1),  // FN0 - switch to Layer1
    [1] = ACTION_LAYER_MOMENTARY(2),  // FN1 - switch to Layer2
+   [2] = ACTION_MODS_KEY(MOD_LSFT, KC_INSERT),
 
    [8]  = ACTION_MODS_KEY(MOD_LSFT, KC_9),
    [9]  = ACTION_MODS_KEY(MOD_LSFT, KC_0),
