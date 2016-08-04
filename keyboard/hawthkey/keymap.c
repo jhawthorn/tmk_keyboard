@@ -94,16 +94,16 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           TRNS  ,  F1  ,  F2  ,  F3  ,  F4  ,  F5  ,  F6  ,              F7  ,  F8  ,  F9  ,  F8  ,  F10 ,  F11 ,  F12   ,
     /* |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------| */
     /* |        |      |      |  [   |  ]   |      |      |           |      |      |      |      |      |      |        | */
-          TRNS  , TRNS , TRNS , LBRC , RBRC , TRNS , TRNS ,             TRNS , TRNS ,  P7  ,  P8  ,  P9  , PAST ,   TRNS ,
+          TRNS  , TRNS , TRNS , LBRC , RBRC , TRNS , TRNS ,             TRNS ,  P7  ,  P8  ,  P9  , PAST , TRNS ,   TRNS ,
     /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
     /* |        |      |      |  (   |  )   |      |------|           |------|      |      |      |      |      |        | */
-          TRNS  , TRNS , TRNS ,  FN8 ,  FN9 , TRNS ,                           TRNS ,  P4  ,  P5  ,  P6  , PPLS ,   TRNS ,
+          TRNS  , TRNS , TRNS ,  FN8 ,  FN9 , TRNS ,                            P4  ,  P5  ,  P6  , PPLS , TRNS ,   TRNS ,
     /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
     /* |        |      |      |  {   |  }   |      |      |           |      |      |      |      |      |      |        | */
-          TRNS  , TRNS , TRNS , FN10 , FN11 , TRNS , TRNS ,             TRNS , TRNS ,  P1  ,  P2  ,  P3  , PSLS ,   TRNS ,
+          TRNS  , TRNS , TRNS , FN10 , FN11 , TRNS , TRNS ,             TRNS ,  P1  ,  P2  ,  P3  , PSLS , TRNS ,   TRNS ,
     /* `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------' */
     /*   |      |      |      |  <   |  >   |                                       |      |      |      |      |      |   */
-          TRNS  , TRNS , TRNS , FN12 , FN13 ,                                         TRNS , PDOT ,  P0  , TRNS ,   TRNS ,
+          TRNS  , TRNS , TRNS , FN12 , FN13 ,                                          P0  , PDOT , TRNS , TRNS ,   TRNS ,
     /*   `----------------------------------'                                       `----------------------------------'   */
     /*                                        ,-------------.       ,-------------.                                        */
     /*                                        |      |      |       |      |      |                                        */
