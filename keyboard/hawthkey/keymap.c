@@ -90,11 +90,11 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    /* layer 1 : function and symbol keys */
    KEYMAP(
     /* ,--------------------------------------------------.           ,--------------------------------------------------. */
-    /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
-          TRNS  ,  F1  ,  F2  ,  F3  ,  F4  ,  F5  ,  F6  ,              F7  ,  F8  ,  F9  ,  F8  ,  F10 ,  F11 ,  F12   ,
+    /* |   ~    |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
+          FN14  ,  F1  ,  F2  ,  F3  ,  F4  ,  F5  ,  F6  ,              F7  ,  F8  ,  F9  ,  F8  ,  F10 ,  F11 ,  F12   ,
     /* |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------| */
     /* |        |  <   |   >  |  [   |  ]   |      |      |           |      |      |      |      |      |      |        | */
-          TRNS  , FN12 , FN13 , LBRC , RBRC , TRNS , TRNS ,             TRNS ,  P7  ,  P8  ,  P9  , PAST , TRNS ,   TRNS ,
+          GRV   , FN12 , FN13 , LBRC , RBRC , TRNS , TRNS ,             TRNS ,  P7  ,  P8  ,  P9  , PAST , TRNS ,   TRNS ,
     /* |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------| */
     /* |        |  {   |   }  |  (   |  )   |      |------|           |------|      |      |      |      |      |        | */
           TRNS  , FN10 , FN11 ,  FN8 ,  FN9 , TRNS ,                            P4  ,  P5  ,  P6  , PPLS , TRNS ,   TRNS ,
@@ -118,7 +118,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /**/
    ),
 
-   /* layer 3 : arrows */
+   /* layer 2 : arrows */
    KEYMAP(
     /* ,--------------------------------------------------.           ,--------------------------------------------------. */
     /* |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        | */
@@ -193,6 +193,7 @@ static const uint16_t PROGMEM fn_actions[] = {
    [11] = ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),
    [12] = ACTION_MODS_KEY(MOD_LSFT, KC_COMMA),
    [13] = ACTION_MODS_KEY(MOD_LSFT, KC_DOT),
+   [14] = ACTION_MODS_KEY(MOD_LSFT, KC_GRAVE),
 };
 
 
