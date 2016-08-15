@@ -18,7 +18,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "stdint.h"
 #include "led.h"
 
+#include <avr/io.h>
 
 void led_set(uint8_t usb_led)
 {
+}
+
+void hook_layer_change(uint32_t layer_state) {
+	DDRC &= ~0xc0;
+	DDRF &= ~0x80;
+
+	uint32_t state = layer_state;
+	DDRC |= (state << 6) & 0xc0;
+	DDRF |= (state << 5) & 0x80;
+
+	PORTC &= ~0xc0;
+	PORTF &= ~0x80;
 }

@@ -160,23 +160,25 @@ static matrix_row_t read_cols(void)
 static void unselect_rows(void)
 {
     // Hi-Z(DDR:0, PORT:0) to unselect
-    DDRB  = 0;
-    PORTB = 0;
-    DDRC  = 0;
-    PORTC = 0;
+    DDRB &= ~0x3f;
+    DDRC &= ~0x3f;
+
+    PORTB &= ~0x3f;
+    PORTC &= ~0x3f;
 }
 
 static void select_row(uint8_t row)
 {
-    DDRB  = 0x3f;
-    DDRC  = 0x3f;
+    DDRB |= 0x3f;
+    DDRC |= 0x3f;
+
+    PORTB &= ~0x3f;
+    PORTC &= ~0x3f;
 
     // Output high(DDR:1, PORT:1) to select
     if(row < 6) {
-        PORTB = 0;
         PORTC = 1 << row;
     } else if(row < 12) {
         PORTB = 1 << (row - 6);
-        PORTC = 0;
     }
 }
