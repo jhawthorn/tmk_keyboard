@@ -60,8 +60,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    /* layer 0 : default */
    KEYMAP(
     /* ,--------------------------------------------------.           ,--------------------------------------------------. */
-    /* |        |  1 ! |  2 @ |  3 # |  4 $ |  5 % |      |           |      |  6 ^ |  7 & |  8 * |  9 ( |  0 ) |        | */
-          ESC   ,   1  ,   2  ,   3  ,   4  ,   5  ,   NO ,              NO  ,   6  ,   7  ,   8  ,   9  ,   0  ,    NO  ,
+    /* |        |  1 ! |  2 @ |  3 # |  4 $ |  5 % |      |           |      |  6 ^ |  7 & |  8 * |  9 ( |  0 ) |   "    | */
+          ESC   ,   1  ,   2  ,   3  ,   4  ,   5  ,   NO ,              NO  ,   6  ,   7  ,   8  ,   9  ,   0  ,   FN17 ,
     /* |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------| */
     /* |        |  q Q |  w W |  e E |  r R |  t T |      |           |      |  y Y |  u U |  i I |  o O |  p P |        | */
           TAB   ,   Q  ,   W  ,   E  ,   R  ,   T  ,  FN0 ,              FN0 ,   Y  ,   U  ,   I  ,   O  ,   P  ,   BSLS ,
@@ -72,8 +72,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* |        | z Z  |  x X |  c C |  v V |  b B |      |           |      |  n N |  m M |  , < |  . > |  / ? |        | */
           LSFT  ,   Z  ,   X  ,   C  ,   V  ,   B  , LGUI ,             RGUI ,   N  ,   M  , COMM , DOT  , SLSH ,  RSFT  ,
     /* `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------' */
-    /*   |      |      |      |      |      |                                       |  - _ |  = + |  [ { |  ] } | PASTE|   */
-           GRV  , LGUI , LALT , FN0  , FN1  ,                                         MINS ,  EQL , LBRC , RBRC , FN2  ,
+    /*   |      |      |      |      |      |                                       |  - _ |  _   |  = + |  +   | PASTE|   */
+           GRV  , LGUI , LALT , FN0  , FN1  ,                                         MINS , FN15 , EQL  , FN16 , FN2  ,
     /*   `----------------------------------'                                       `----------------------------------'   */
     /*                                        ,-------------.       ,-------------.                                        */
     /*                                        |      |      |       |      |      |                                        */
@@ -113,7 +113,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                        TRNS ,         TRNS ,
     /*                                 |      |      |------|       |------|      |      |                                 */
     /*                                 |      |      |      |       |      |      |      |                                 */
-                                         TRNS , TRNS , TRNS ,         TRNS , TRNS , TRNS
+                                         TRNS , DEL  , TRNS ,         TRNS , TRNS , TRNS
     /*                                 `--------------------'       `--------------------'                                 */
     /**/
    ),
@@ -183,17 +183,27 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Fn action definition
  */
 static const uint16_t PROGMEM fn_actions[] = {
-   [0] = ACTION_LAYER_MOMENTARY(1),  // FN0 - switch to Layer1
-   [1] = ACTION_LAYER_MOMENTARY(2),  // FN1 - switch to Layer2
+   // FN0 - switch to Layer1
+   [0] = ACTION_LAYER_MOMENTARY(1),
+   // FN1 - switch to Layer2
+   [1] = ACTION_LAYER_MOMENTARY(2),
+
+   // FN2 = PASTE = Shift + Insert
    [2] = ACTION_MODS_KEY(MOD_LSFT, KC_INSERT),
 
+   // FN8 = ( = Shift + 9
    [8]  = ACTION_MODS_KEY(MOD_LSFT, KC_9),
+   // FN9 = ) = Shift + 0
    [9]  = ACTION_MODS_KEY(MOD_LSFT, KC_0),
+   // FN9 = { = Shift + [
    [10] = ACTION_MODS_KEY(MOD_LSFT, KC_LBRC),
    [11] = ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),
    [12] = ACTION_MODS_KEY(MOD_LSFT, KC_COMMA),
    [13] = ACTION_MODS_KEY(MOD_LSFT, KC_DOT),
    [14] = ACTION_MODS_KEY(MOD_LSFT, KC_GRAVE),
+   [15] = ACTION_MODS_KEY(MOD_LSFT, KC_MINS),
+   [16] = ACTION_MODS_KEY(MOD_LSFT, KC_EQL),
+   [17] = ACTION_MODS_KEY(MOD_LSFT, KC_QUOT),
 };
 
 
